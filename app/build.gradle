@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '29.0.3'
+
+    defaultConfig {
+        applicationId 'org.borisveriga.soundrecorder'
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    lintOptions {
+        disable 'MissingTranslation'
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.+'
+    implementation 'androidx.cardview:cardview:1.0.+'
+    implementation 'androidx.recyclerview:recyclerview:1.0.+'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.+'
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.22'
+    implementation 'com.budiyev.android:circular-progress-bar:1.2.0'
+    implementation 'com.google.android.material:material:1.2.0'
+
+    // detect memory leaks
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
+
+    implementation 'com.google.android.material:material:1.2.0'
+
+    implementation 'com.melnykov:floatingactionbutton:1.1.0'
+    implementation 'com.jpardogo.materialtabstrip:library:1.0.6'
+
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0"
+
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.+', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'androidx.annotation', module: 'annotation'
+    })
+
+}
